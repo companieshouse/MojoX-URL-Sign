@@ -5,8 +5,9 @@ use Mojo::Base 'Mojolicious::Plugin';
 use MojoX::URL::Sign;
 
 sub register {
-    my $app = shift;
-    my $arg = ref($_[0]) eq 'HASH' ? shift : {@_};
+    my $self = shift;
+    my $app  = shift;
+    my $arg  = ref($_[0]) eq 'HASH' ? shift : {@_};
 
     die('No salt supplied') unless (defined($arg->{salt}));
 
