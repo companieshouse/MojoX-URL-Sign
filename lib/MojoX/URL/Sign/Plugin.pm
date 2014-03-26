@@ -11,8 +11,8 @@ sub register {
 
     die('No salt supplied') unless (defined($arg->{salt}));
 
-    $app->helper(sign_url   => sub { return MojoX::URL::Sign->sign_url(shift, $arg->{salt}); });
-    $app->helper(verify_url => sub { return MojoX::URL::Sign->verify_url(shift, $arg->{salt}); });
+    $app->helper(sign_url   => sub { my $self = shift; return MojoX::URL::Sign->sign_url(shift // $self->req->url->to_abs, $arg->{salt}); });
+    $app->helper(verify_url => sub { my $self = shift; return MojoX::URL::Sign->verify_url(shift // $self->req->url->to_abs, $arg->{salt}); });
 
     return;
 }
