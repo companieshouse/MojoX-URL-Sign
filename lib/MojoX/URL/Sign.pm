@@ -1,5 +1,7 @@
 package MojoX::URL::Sign;
 
+our $VERSION = '0.01';
+
 use Mojo::Base -base;
 
 use Mojo::URL;
