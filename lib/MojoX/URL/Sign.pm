@@ -1,7 +1,7 @@
 package MojoX::URL::Sign;
 # ABSTRACT: Sign and verify URLs to prevent tampering
 
-our $VERSION = '0.01';
+our $VERSION = '0.30';
 
 use Mojo::Base -base;
 
