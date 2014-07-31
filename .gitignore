@@ -1,4 +1,4 @@
-{{ $dist->name }}-*
+MojoX-URL-Sign-*
 blib/
 .build/
 _build/
